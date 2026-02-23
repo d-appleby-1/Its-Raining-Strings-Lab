@@ -11,7 +11,7 @@ vector<string> sort_list(const vector<string>& v, const string& s) {
       bool s_sorted = false;
       for (int i = 0; i < v.size(); i++) {
          index = i;
-         if (s<v[i]) {
+         if (s<=v[i]) {
             sorted.push_back(s);
             s_sorted = true;
             break;
@@ -20,7 +20,7 @@ vector<string> sort_list(const vector<string>& v, const string& s) {
          }
       }
       for (int i = 0; i < v.size() - index; i++) {
-         if (s>v[i] && !s_sorted) {
+         if (!s_sorted) {
             sorted.push_back(s);
          } else {
             sorted.push_back(v[i + index]);
